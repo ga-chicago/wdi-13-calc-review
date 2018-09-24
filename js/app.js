@@ -7,6 +7,9 @@ console.log("hey calc");
 let num1; 
 let oper = null;
 
+// use this clear display at start of second number
+let operWasJustClicked = false
+
 
 $('.num').on('click', (e) => {
   // console.log(e)
@@ -17,10 +20,11 @@ $('.num').on('click', (e) => {
 
 
   // if the person just hit an operator 
-
+  if(operWasJustClicked) {
     // clear the screen 
-    
-
+    $('#display').empty();
+    operWasJustClicked = false;
+  }
 
 
   // put the number in the display
@@ -37,9 +41,16 @@ $('.num').on('click', (e) => {
 
 
 // when an operator is clicked
+$('.oper').on('click', (e) => {
     // store number from display in num1
+    num1 = $('#display').text();
     // store operator -- 
-    // clear display
+    oper = $(e.currentTarget).text(); 
+
+    // this will cause display to get cleared next time 
+    operWasJustClicked = true
+  
+})
 
 
 // when eq is clicked
