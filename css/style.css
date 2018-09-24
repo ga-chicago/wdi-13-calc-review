@@ -1,0 +1,27 @@
+body {
+    background-color: brown;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+#calc {
+    height: 400px;
+    width: 400px;
+    background-color: black;
+}
+
+button {
+    width: 50px;
+}
+.row {
+    display: flex;
+    justify-content: space-between;
+    height: 60px;
+}
+#display {
+    text-align: right;
+    color: white;
+    background-color: purple;
+    font-size: 30pt;
+}
