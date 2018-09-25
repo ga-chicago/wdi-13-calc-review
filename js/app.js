@@ -54,7 +54,17 @@ $('.oper').on('click', (e) => {
 
 
 // when eq is clicked
-    // store second number
-    // do the math
-    // store the result  in num1
-    // show num1
+$('.eq').on('click', (e) => {
+    // get second number
+    const num2 = $('#display').text()
+
+    // do the math -- nominally this owuld be an if-else with a 
+    // condition for each operator. for speed we will just start with +
+    const result = parseInt(num1, 10) + parseInt(num2, 10)
+
+    // show num1 in display
+    $('#display').text(result)  
+
+    // store the result in num1 for next time
+    num1 = result
+})
